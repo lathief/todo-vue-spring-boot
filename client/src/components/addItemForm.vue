@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 export default {
     data: function(){
         return {
@@ -10,7 +11,7 @@ export default {
     methods: {
         addItem() {
             if(this.item.name !== '') {
-                this.axios.post('http://localhost:8080/api/store', {
+                axios.post('http://localhost:8080/api/store', {
                     value: this.item.name,
                     completed:false
                 }).then(response => {

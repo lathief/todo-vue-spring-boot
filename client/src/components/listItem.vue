@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     props: ['item'],
     data() {
@@ -40,11 +41,10 @@ export default {
                 this.show_input = false
                 
                 if(this.item.name !== undefined) {
-                    this.axios.put('http://localhost:8080/api/updatevalue/'+this.item.id, {
+                    axios.put('http://localhost:8080/api/updatevalue/'+this.item.id, {
                         value: this.item.name
                     }).then(response => {
                         if(response.status >= 200 && response.status < 300){
-                            // alert('Item updated succesfuly')
                             this.$emit('reloadTodos')
                         }
                     })
@@ -53,19 +53,17 @@ export default {
 
         },
         updateMarkTodo(){
-            this.axios.put('http://localhost:8080/api/updatemark/'+this.item.id, {
+            axios.put('http://localhost:8080/api/updatemark/'+this.item.id, {
                 completed: this.item.completed
             }).then(response => {
                 if(response.status >= 200 && response.status < 300){
-                    // alert('Item updated succesfuly')
                     this.$emit('reloadTodos')
                 }
             })
         },
         removeTodo(){
-            this.axios.delete('http://localhost:8080/api/delete/'+this.item.id).then(response => {
+            axios.delete('http://localhost:8080/api/delete/'+this.item.id).then(response => {
                 if(response.status >= 200 && response.status < 300){
-                    // alert('Item deleted succesfuly')
                     this.$emit('reloadTodos')
                 }
             })

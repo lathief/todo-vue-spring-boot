@@ -1,6 +1,3 @@
-
-import ListItem from './listItem.vue';
-
 <template>
     <div>
         <div v-for="(item, index) in items" :key="index">
@@ -13,6 +10,7 @@ import ListItem from './listItem.vue';
     </div>
 </template>
 <script>
+import axios from 'axios';
 import listItem from './listItem.vue';
 export default {
     components: {
@@ -25,7 +23,7 @@ export default {
     },
     methods:{
         getTodos(){
-            this.axios.get('http://localhost:8080/api/index').then(response => {
+            axios.get('http://localhost:8080/api/index').then(response => {
                 if(response.status === 200) {
                     this.items = response.data
                     console.log(response.data)
