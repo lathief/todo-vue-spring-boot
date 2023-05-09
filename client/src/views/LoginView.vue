@@ -2,7 +2,9 @@
   <div class="container d-flex flex-column min-vh-100">
     <header class="d-flex flex-wrap align-items-center justify-content-center py-3 mb-4 border-bottom">
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/" class="nav-link px-2 link-active" style="font-size: 32px;">Todo List</a></li>
+        <li>
+          <a href="/" class="nav-link px-2 link-active" style="font-size: 32px">Todo List</a>
+        </li>
       </ul>
     </header>
     <div class="form-signin m-auto mt-5">
@@ -16,7 +18,6 @@
           <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
           <label for="floatingPassword">Password</label>
         </div>
-
         <button class="w-100 btn btn-lg btn-primary" type="submit">
           Sign in
         </button>
@@ -31,11 +32,10 @@ export default {
   name: "LoginView",
   components: {
     Footer,
-  }
+  },
 };
 </script>
 <style scoped>
-
 .form-signin {
   max-width: 330px;
   padding: 15px;
