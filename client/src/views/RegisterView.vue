@@ -20,8 +20,12 @@
           <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
           <label for="floatingPassword">Password</label>
         </div>
+        <div class="form-floating">
+          Already Have Account
+          <a href="/login" class="mt-5">Login</a>
+        </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">
-          Sign in
+          Sign up
         </button>
       </form>
     </div>

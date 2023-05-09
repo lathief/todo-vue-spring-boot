@@ -18,6 +18,10 @@
           <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
           <label for="floatingPassword">Password</label>
         </div>
+        <div class="form-floating">
+          Create a new account
+          <a href="/register" class="mt-5">Here</a>
+        </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">
           Sign in
         </button>
